@@ -1,3 +1,5 @@
+## 기능과 구현
+
 임의의 위치에 있는 원소를 확인/변경 = O(1)
 
 원소를 끝에 추가 = O(1)
@@ -55,4 +57,8 @@ for (int i = 0; i <= v1.size()-1; i++)
 	cout << v1[i] << ' ';
 ```
 
-**아주 잘못된 코드.** 기본적으로 vector의 size 메소드는 시스템에 따라 unsigned int 혹은 unsigned long long을 반환한다. unsigned int와 int를 연산하면 unsigned int로 자동 형변환이 발생하기 때문에 (unsigned int)0 - (int)1은 -1이 아니라 4294967295이 된다. 그래서 아무것도 출력하지 않고 종료되는 것이 아니라 런타임에러가 발생하게 될 것이다.
+**아주 잘못된 코드.** 기본적으로 vector의 size 메소드는 시스템에 따라 unsigned int 혹은 unsigned long long을 반환한다. unsigned int와 int를 연산하면 unsigned int로 자동 형변환이 발생하기 때문에 (unsigned int)0 - (int)1은 -1이 아니라 4294967295이 된다. 그래서 아무것도 출력하지 않고 종료되는 것이 아니라 런타임에러가 발생하게 될 것이다. 
+
+## 참고
+
+BaaaaaaaarkingDog 실전 알고리즘
