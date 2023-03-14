@@ -10,18 +10,18 @@ int dx[4] = {1, 0, -1, 0};
 
 void bfs(int y, int x) {
   queue<pair<int,int>> Q;
-	vis[y][x] = 1;
+  vis[y][x] = 1;
   Q.push({y, x});
   while(!Q.empty()){
     auto cur = Q.front(); Q.pop();
     for(int i = 0; i < 4; i++){
-      int nx = cur.X + dx[i];
-      int ny = cur.Y + dy[i];
-      if(ny < 0 || ny >= n || nx < 0 || nx >= m) continue;
-      if(vis[nx][ny] || board[nx][ny]) continue;
-      vis[nx][ny] = 1; 
-      Q.push({nx,ny});
-		}
+    	int ny = cur.Y + dy[i];
+	int nx = cur.X + dx[i];
+	if(ny < 0 || ny >= n || nx < 0 || nx >= m) continue;
+	if(vis[ny][nx] || board[ny][nx]) continue;
+	vis[ny][nx] = 1; 
+	Q.push({ny,nx});
+    }
   }
 }
 ```
