@@ -26,7 +26,7 @@ int main()
     
     cin >> n >> m;
     for (int i = 1; i <= n; i++) cin >> num[i];
-    sort(num, num + n + 1);
+    sort(num, num+n+1);
     f(0);
     return 0;
 }
