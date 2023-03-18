@@ -2,7 +2,7 @@
 using namespace std;
 
 int n, m; 
-int arr[10], isused[10], num[10];
+int arr[10], num[10], isused[10];
 
 void f(int k) {
     if (k == m) {
