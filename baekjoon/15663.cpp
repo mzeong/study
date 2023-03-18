@@ -3,7 +3,6 @@ using namespace std;
 
 int n, m; 
 int arr[10], num[10], isused[10];
-vector<int> v;
 
 void f(int k) {
     if (k == m) {
