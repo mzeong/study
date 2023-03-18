@@ -220,7 +220,7 @@ $('.navbar-toggler').on('click', function(){
 }
 ```
 
-1. 원할 때 최종 스타일로 변하라고 JS 코드를 짠다.
+2. 원할 때 최종 스타일로 변하라고 JS 코드를 짠다.
 
 ```
 $('#login').on('click', function() {
@@ -228,7 +228,7 @@ $('#login').on('click', function() {
 })
 ```
 
-1. 시작 스타일에 transition을 추가한다. 
+3. 시작 스타일에 transition을 추가한다. 
 
 ```
 .black-bg {
