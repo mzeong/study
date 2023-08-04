@@ -1,0 +1,68 @@
+<h2>promise</h2>
+
+promise 객체는 아래와 같은 문법으로 만들 수 있다.
+
+```
+let promise = new Promise(function(resolve, reject) {
+	// executor (제작 코드)
+}
+```
+
+executor는 `new Promise`가 만들어질 때 자동으로 실행되는데 여기서 원하는 일이 처리된다. 처리가 끝나면 처리 성공 여부에 따라 `resolve`나 `reject`를 호출한다. 이때, promise 객체의 상태가 변화한다.
+
+-   `state` - 처음엔 `“pending”`(보류)이었다 `resolve`가 호출되면 `“fulfilled”`, `reject`가 호출되면 `“rejected”`로 변한다.
+-   `result` - 처음엔 `undefined`이었다 `resolve(value)`가 호출되면 `value`로, `reject(error)`가 호출되면 `error`로 변한다.
+
+<h2>then, catch, finally</h2>
+
+promise 객체의 `state`, `result`는 내부 프로퍼티이므로 개발자가 직접 접근할 수 없다. `.then`/`.catch`/`.finally` 메서드를 사용하면 접근 가능하다.
+
+<h3>then</h3>
+
+```
+promise.then(
+	function(result) { /* 결과를 다룬다. */ },
+	function(error) { /* 에러를 다룬다. */ }
+);
+```
+
+<h3>catch</h3>
+
+에러가 발생한 경우만 다루고 싶다면 `.then`의 첫 번째 인수로 `null`을 전달하면 된다. `.catch(f)`는 문법이 간결하다는 점만 빼고 `.then(null, f)`와 완벽하게 같다.
+
+<h3>finally</h3>
+
+결과가 어떻든 마무리가 필요하면 `finally`가 유용하다. `finally` 핸들러는 성공, 실패 여부를 몰라도 되기 때문에 인수가 없다. 또한, 자동으로 다음 핸들러에 결과와 에러를 전달한다.
+
+<h2>promise chaining</h2>
+
+promise chaining이 가능한 이유는 `promise.then`을 호출하면 promise가 반환되기 때문이다. 반환된 promise에는 당연히 `.then`을 호출할 수 있다. 
+
+<h2>promise API</h2>
+
+<h3>Promise.all</h3>
+
+여러 개의 promise를 동시에 실행시키고 모든 promise가 준비될 때까지 기다릴 때 사용할 수 있다. 
+(예. 복수의 URL에 동시에 요청을 보내고, 다운로드가 모두 완료된 후에 콘텐츠를 처리할 때)
+
+요소 전체가 promise인 배열을 받고 새로운 promise를 반환한다. 
+
+```
+let promise = Promise.all([...promises...]);
+```
+
+배열의 요소 순서는 `Promise.all`에 전달되는 promise 순서와 상응한다.(첫 번째 promise는 가장 늦게 이행되더라도 처리 결과는 배열의 첫 번째 요소에 저장된다.)
+
+`Promise.all`에 전달되는 promise 중 하나라도 거부되면, `Promise.all`이 반환하는 promise는 에러와 함께 바로 거부된다. 
+
+<h3>Promise.allSettled</h3>
+
+여러 요청 중 하나가 실패해도 다른 요청 결과는 여전히 필요할 때 `Promise.allSettled`를 사용할 수 있다. `Promise.allSettled`를 사용하면 각 promise의 상태와 값 또는 에러를 받을 수 있다.
+
+<h3>Promise.race</h3>
+
+`Promise.all`과 비슷하다. 다만 가장 먼저 처리되는 promise의 결과 혹은 에러를 반환한다. ('경주(race)의 승자'가 나타난 순간 다른 promise의 결과 또는 에러는 무시된다.)
+
+<h2>참고</h2>
+
+https://ko.javascript.info/
