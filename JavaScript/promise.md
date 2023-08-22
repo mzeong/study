@@ -83,4 +83,5 @@ let promise = Promise.all([...promises...]);
 <h2>참고</h2>
 
 https://ko.javascript.info/
+
 인간 JS 엔진 되기 (JS 고급 강좌)
