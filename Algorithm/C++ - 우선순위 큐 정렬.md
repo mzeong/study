@@ -11,4 +11,8 @@ struct cmp {
 };
 ```
 
-- vector와 같은 자료구조로 sort를 할 때와는 반대이다. vector는 앞에서부터 값을 참조하고, priority_queue는 뒤에서부터 값을 참조하므로 비교 함수가 반대로 작성된다. 
+- vector와 같은 자료구조로 sort를 할 때와는 반대이다. <br>vector는 앞에서부터 값을 참조하고, priority_queue는 뒤에서부터 값을 참조하므로 비교 함수가 반대로 작성된다. 
+
+### 참고
+
+https://real-012.tistory.com/59
