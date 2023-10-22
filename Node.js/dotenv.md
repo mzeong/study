@@ -3,7 +3,7 @@
 설치하고
 
 ```
-npm i dotenv
+> npm i dotenv
 ```
 
 프로젝트의 루트에 `.env` 파일을 생성한다. 세미콜론 없이 `키=값` 형태로 적는다.
@@ -15,14 +15,14 @@ DB_PASSWORD=abcd
 
 가능한 파일 상단에 작성하는 것이 좋다.
 
-```
+```javascript
 const dotenv = require("dotenv");
 dotenv.config();
 ```
 
 이제 소스코드에 값이 노출되지 않는다.
 
-```
+```javascript
 app.use(cookieParser(process.env.COOKIE_SECRET));
 ```
 
