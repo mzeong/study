@@ -29,6 +29,6 @@ public class Main
 		}
 		
 		if (answer == N + 1) answer = 0;
-	    System.out.println(answer);
+		System.out.println(answer);
 	}
 }
